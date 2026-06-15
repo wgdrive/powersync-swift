@@ -46,7 +46,7 @@ private final class ActiveDatabaseGroupData: Sendable {
 /// responsible for initializing the sync process for all databases in the group.
 final class ActiveDatabaseGroup: Sendable {
     fileprivate let data: ActiveDatabaseGroupData
-    private weak let collection: DatabaseGroupCollection?
+    private nonisolated(unsafe) weak var collection: DatabaseGroupCollection?
 
     fileprivate init(data: ActiveDatabaseGroupData, collection: DatabaseGroupCollection) {
         self.data = data
