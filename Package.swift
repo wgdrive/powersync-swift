@@ -76,6 +76,12 @@ let package = Package(
                 .product(name: "AsyncAlgorithms", package: "swift-async-algorithms"),
                 .product(name: "BasicContainers", package: "swift-collections"),
                 .product(name: "DequeModule", package: "swift-collections")
+            ],
+            resources: [
+                // App Store privacy manifest: rides in this target's resource bundle
+                // (PowerSync_PowerSync.bundle) into the consuming app. Accurate-empty:
+                // no tracking, no collection, zero required-reason APIs (see the file).
+                .copy("PrivacyInfo.xcprivacy")
             ]
         ),
         .target(

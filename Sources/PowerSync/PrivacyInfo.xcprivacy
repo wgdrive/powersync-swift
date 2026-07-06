@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!--
+	  PowerSync Swift SDK privacy manifest (fork branch xcode26-weak-let-fix).
+
+	  Accurate declarations, audited 2026-07-06 over Sources/ (all targets):
+	    - No tracking, no tracking domains.
+	    - The SDK collects no data itself: it is a local-first sync client; what it
+	      transports is the HOST app's data, under the host app's own manifest.
+	    - Zero required-reason APIs used (no file-timestamp, UserDefaults, boot-time/
+	      uptime, disk-space, or keyboard-list API in any Swift/C source here; the
+	      SQLite core rides in separate packages with their own bundles).
+	-->
+	<key>NSPrivacyTracking</key>
+	<false/>
+	<key>NSPrivacyTrackingDomains</key>
+	<array/>
+	<key>NSPrivacyCollectedDataTypes</key>
+	<array/>
+	<key>NSPrivacyAccessedAPITypes</key>
+	<array/>
+</dict>
+</plist>
